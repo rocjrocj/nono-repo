@@ -26,7 +26,11 @@
 <body>
     
     <!-- buts -->
-    <div id="butAll" class="butAll"><div id="butLft" class="butLft"></div><div id="butRgt" class="butRgt"></div></div>
+    <div id="butAll" class="butAll"><div id="butLft" class="butLft" onclick="goEmail()"></div><div id="butRgt" class="butRgt" onclick="goTwit()"></div></div>
+    
+    <!-- swipes -->
+    <div id="swUp" class="swUp"><img src="images/swipeup.png" class="img-responsive"></div>
+    <div id="swLft" class="swDn"><img src="images/swipeleft.png" class="img-responsive"></div>
 
 
     <!-- vertical -->
@@ -136,8 +140,18 @@
     var playAu = function(){
         var au = document.getElementById("auTitle"); 
         au.play();
+        var all = document.getElementById("butAll");
+        all.style.display = "block";
     };
     setTimeout(playAu, 3300);
+    
+    function goEmail() {
+        location.href = 'mailto:hismajesty@kingofthenono.com?subject=nonono';
+    }
+    
+    function goTwit() {
+        location.href = 'http://www.twitter.com';
+    }
     </script>
 
 

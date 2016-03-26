@@ -51,20 +51,28 @@ body {
     height: 100%;
     z-index: 300;
     cursor: pointer;
+    display: none;
 }
 .butLft {
     float: left;
     width: 50%;
     height: 100%;
-    background-color: red;
+    // background-color: red;
 }
 .butRgt {
     float: right;
     width: 50%;
     height: 100%;
-    background-color: green;
+    // background-color: green;
 }
-
+.swUp {
+    position: absolute;
+    
+}
+.swLft {
+    position: absolute;
+    
+}
 
 /* helper styles */
 .divFull {
