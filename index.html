@@ -26,17 +26,16 @@
 <body>
     
     <!-- buts -->
-    <div id="butAll" class="butAll"><div id="butLft" class="butLft" onclick="goEmail()"></div><div id="butRgt" class="butRgt" onclick="goTwit()"></div></div>
+    <div id="butAll" class="butAll"><a href="mailto:hismajesty@kingofthenono.com?subject=nonono"><div id="butLft" class="butLft"></div></a><a href="http://www.twitter.com"><div id="butRgt" class="butRgt"></div></a></div>
     
     <!-- swipes -->
-    <div id="swUp" class="swUp"><img src="images/swipeup.png" class="img-responsive"></div>
-    <div id="swLft" class="swDn"><img src="images/swipeleft.png" class="img-responsive"></div>
 
 
     <!-- vertical -->
     <div class="swiper-container swiper-container-v">
         <div class="swiper-wrapper">
             <div class="swiper-slide">
+                <div id="swUp" class="swUp"><img src="images/swipeup.png" class="img-responsive"></div>
                 <img src="images/title.gif" class="img-responsive" alt="NoNoNoNoNoNo" />
                 <audio id="auTitle" src="media/intro_fart.mp3"></audio>
             </div>
@@ -46,7 +45,7 @@
                 <!-- horizontal -->
                 <div class="swiper-container swiper-container-h">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide"><img src="images/ChickenDog/1.gif" class="img-responsive" alt="ChickenDog" /></div>
+                        <div class="swiper-slide"><div id="swLft" class="swLft"><img src="images/swipeleft.png" class="img-responsive"></div><img src="images/ChickenDog/1.gif" class="img-responsive" alt="ChickenDog" /></div>
                         <div class="swiper-slide"><img src="images/ChickenDog/2.gif" class="img-responsive" alt="ChickenDog" /></div>
                         <div class="swiper-slide"><img src="images/ChickenDog/3.gif" class="img-responsive" alt="ChickenDog" /></div>
                         <div class="swiper-slide"><img src="images/ChickenDog/4.gif" class="img-responsive" alt="ChickenDog" /></div>
@@ -142,16 +141,18 @@
         au.play();
         var all = document.getElementById("butAll");
         all.style.display = "block";
+        var up = document.getElementById("swUp");
+        up.style.display = "block";
     };
     setTimeout(playAu, 3300);
     
-    function goEmail() {
-        location.href = 'mailto:hismajesty@kingofthenono.com?subject=nonono';
-    }
-    
-    function goTwit() {
-        location.href = 'http://www.twitter.com';
-    }
+    var sLft = function(){
+        var lft = document.getElementById("swLft");
+        lft.style.display = "block";
+        var up = document.getElementById("swUp");
+        up.style.display = "none";
+    };
+    setTimeout(sLft, 2000);
     </script>
 
 

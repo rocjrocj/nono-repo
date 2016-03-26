@@ -48,7 +48,7 @@ body {
 .butAll {
     position: absolute;
     width: 100%;
-    height: 100%;
+    height: 40%;
     z-index: 300;
     cursor: pointer;
     display: none;
@@ -67,10 +67,17 @@ body {
 }
 .swUp {
     position: absolute;
-    
+    bottom: 20px;
+    right: 20px;
+    z-index: 400;
+    display: none;
 }
 .swLft {
     position: absolute;
+    bottom: 20px;
+    right: 20px;
+    z-index: 400;
+    display: none;
     
 }
 
