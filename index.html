@@ -131,17 +131,9 @@
 			
 			<!-- vertical --> 
 		</div>
-		<div class="swiper-slide"> 
-			
-			<!-- horizontal -->
-			<div class="swiper-container swiper-container-h">
-				<div class="swiper-wrapper">
-					<div class="swiper-slide">
+		<div class="swiper-slide noI"> 
 						<video src="media/Assumptions/assumptions.mp4" class="swiper-lazy" controls></video>
 						<div class="swiper-lazy-preloader"></div>
-					</div>
-				</div>
-			</div>
 			<!-- end copy here --> 
 			
 			<!-- vertical --> 
@@ -216,17 +208,9 @@
 			
 			<!-- vertical --> 
 		</div>
-		<div class="swiper-slide"> 
-			
-			<!-- horizontal -->
-			<div class="swiper-container swiper-container-h">
-				<div class="swiper-wrapper">
-					<div class="swiper-slide">
+		<div class="swiper-slide noI"> 
 						<video src="media/Hotdog/hotdog.mp4" class="swiper-lazy" controls></video>
 						<div class="swiper-lazy-preloader"></div>
-					</div>
-				</div>
-			</div>
 			<!-- end copy here --> 
 			<!-- start copy here --> 
 			
@@ -255,7 +239,7 @@
 			<!-- end copy here --> 
 			<!-- vertical --> 
 		</div>
-		<div class="swiper-slide"><img src="images/end.gif" class="img-responsive" alt="NoNoNoNoNoNo" /></div>
+		<div class="swiper-slide noI"><img src="images/end.gif" class="img-responsive" alt="NoNoNoNoNoNo" /></div>
 	</div>
 </div>
 
@@ -272,50 +256,56 @@
 <script>
 
 // global vars
-var swiperV;
-var swiperH;
+//var swiperV;
+//var swiperH;
 var swiperPage;
 var au;
 
 // initialize swiper
-swiperH = new Swiper('.swiper-container-h', {
+var swiperH = new Swiper('.swiper-container-h', {
 	spaceBetween: 30,
 	grabCursor: true,
 	preloadImages: false,
 	lazyLoading: true,
 	onReachBeginning: function() {
-		sh('swLft', 'show');
+		//shBeg('swLft', 'show');
 	},
 	onReachEnd: function() {
-		sh('swUp', 'show');
+		shBeg('swUp', 'show');
 	}
 });
-swiperV = new Swiper('.swiper-container-v', {
+var swiperV = new Swiper('.swiper-container-v', {
 	direction: 'vertical',
 	spaceBetween: 30,
 	grabCursor: true,
 	preloadImages: false,
 	lazyLoading: true,
 	onTouchStart: function() {
-		sh('swUp', 'hide');
-		sh('swLft', 'hide');
+		shBeg('swUp', 'hide');
+		shBeg('swLft', 'hide');
+	},
+	onReachBeginning: function() {
+		//shBeg('swUp', 'show');
 	},
 	onSlideChangeEnd: function() {
+		shBeg('swLft', 'show');
 	}
 });
 	
 /********** functions **********/
 //show-hide
-function sh(shDiv, shDo) {
-	console.log("shDiv-" + shDiv + "-" + "shDo-" + shDo);
-	if (swiperV.activeIndex != 0) {
-		if (shDo == 'show') {
-			$('#' + shDiv).show();
+//var aI = swiperV.activeIndex;
+function shBeg(shDivB, shDoB) {
+	console.log("shDivB-" + shDivB + "-" + "shDoB-" + shDoB);
+	//if (aI != 0 && shDivB != 'swLft') {
+		if (shDoB == 'show') {
+			$('#' + shDivB).fadeIn('slow');
 		} else {
-			$('#' + shDiv).hide();
+			$('#' + shDivB).hide();
 		}
-	}
+	//}
 }
+//setTimeout(shBeg, 5000);
 //play audio
 function pAu() {
 	console.log("pAu Called");
@@ -323,12 +313,15 @@ function pAu() {
 	au.play();
 }
 //init
+var myInit;
 $(function () {
 	console.log("init Called");
-	sh('butAll', 'show');
-	var myInit = function() {
+	shBeg('butAll', 'show');
+	console.log("after shBeg butAll");
+	myInit = function() {
 	   pAu();
-	   sh('swUp', 'show');
+	   shBeg('swUp', 'show');
+	   console.log("after shBeg swUp");
 	};
 	setTimeout(myInit, 3300);
 });
