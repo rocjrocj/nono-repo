@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>NoNo Test</title>
+<script src="http://code.createjs.com/easeljs-0.8.1.min.js"></script>
+<script>
+	var stage;
+	
+	window.addEventListener('resize', resize, false);
+	  
+	function init() {
+		stage = new createjs.Stage("demoCanvas");
+		createjs.Ticker.addListener(this);
+		resize();
+	}
+	
+	function tick() {
+		stage.update();
+	} 
+	
+	function resize() { 
+		stage.canvas.width = window.innerWidth;
+		stage.canvas.height = window.innerHeight; 
+	}
+</script>
+</head>
+
+<body onload="init();">
+	<canvas id="demoCanvas" width="500" height="300"></canvas>
+</body>
+</html>
