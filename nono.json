@@ -1,24 +1,29 @@
-// JSON Document - king of the nono
-
 {
-    "strip": {
-        "name": "Title",
-        "numberOfSlides": "1",
-        "isVideo": "no"
-    }
-    "strip": {
-        "name": "ChickenDog",
-        "numberOfSlides": "18",
-        "isVideo": "no"
-    }
-    "strip": {
+    "strips": [
+		{
+			"name": "Title",
+			"numberOfSlides": "1",
+			"isVideo": "no"
+		},
+		{
+			"name": "ChickenDog",
+			"numberOfSlides": "18",
+			"isVideo": "no"
+		},
+		{
         "name": "Assumptions",
         "numberOfSlides": "1",
         "isVideo": "yes"
-    }
-    "strip": {
+		},
+		{
         "name": "LikeCatsAndDogs",
         "numberOfSlides": "19",
         "isVideo": "no"
-    }
+		},
+		{
+        "name": "End",
+        "numberOfSlides": "1",
+        "isVideo": "no"
+		}
+	]
 }

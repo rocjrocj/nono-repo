@@ -1,0 +1,38 @@
+<!doctype html>
+<html ng-app="nono">
+<head>
+<meta charset="UTF-8">
+<title>AngularJS HTTP Test</title>
+
+<!-- angular -->
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-resource.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.min.js"></script>
+<script type="text/javascript" src="/app/scripts/app.js"></script>
+<script type="text/javascript" src="/app/scripts/controllers.js"></script>
+
+</head>
+
+<body>
+
+<div>
+  <label>Name:</label>
+  <input type="text" ng-model="yourName" placeholder="Enter a name here">
+  <hr>
+  <h1>Hello {{yourName}}!</h1>
+</div>
+
+
+<div ng-controller="nonoJsonController">
+
+<ul>
+  <li ng-repeat="x in myData">
+    {{ x.name + ', ' + x.numberOfSlides }}
+	<img src="{{ x.name }}/1.gif" class="img-responsive" alt="{{ x.name }}" />
+  </li>
+</ul>
+
+</div>
+	
+</body>
+</html>

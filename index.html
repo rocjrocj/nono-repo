@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app>
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,6 +16,10 @@
 <!-- swiper -->
 <link rel="stylesheet" href="/css/swiper.min.css">
 
+<!-- angular -->
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+<script type="text/javascript" src="/app/scripts/app.js"></script>
+
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <!--[if lt IE 9]>
@@ -28,12 +32,17 @@
 </head>
 
 <body>
-
+<div style="position:absolute; z-index:99;">
+      <label>Name:</label>
+      <input type="text" ng-model="yourName" placeholder="Enter a name here">
+      <hr>
+      <h1>Hello {{yourName}}!</h1>
+    </div>
 <!-- buts -->
-<div id="butAll" class="butAll">
+<!--<div id="butAll" class="butAll">
 	<a href="mailto:sire@kingofthenono.com?subject=nonono"><div id="butLft" class="butLft"></div></a>
 	<a href="https://twitter.com/kingofthenono"><div id="butRgt" class="butRgt"></div></a>
-</div>
+</div>-->
 <div id="swUp" class="swUp"><img src="/images/swipeup.png" class="img-responsive"></div>
 <div id="swLft" class="swLft"><img src="/images/swipeleft.png" class="img-responsive"></div>
 
