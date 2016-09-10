@@ -1,29 +1,20 @@
 {
     "strips": [
 		{
-			"name": "Title",
-			"numberOfSlides": "1",
-			"isVideo": "no"
-		},
-		{
-			"name": "ChickenDog",
+			"name": "chickendog",
 			"numberOfSlides": "18",
+			"slides": [
+				{ "slide": "1" },
+				{ "slide": "2" },
+				{ "slide": "3" },
+				{ "slide": "4" },
+				{ "slide": "5" },
+				{ "slide": "6" },
+				{ "slide": "7" },
+				{ "slide": "8" },
+				{ "slide": "9" }
+			],
 			"isVideo": "no"
-		},
-		{
-        "name": "Assumptions",
-        "numberOfSlides": "1",
-        "isVideo": "yes"
-		},
-		{
-        "name": "LikeCatsAndDogs",
-        "numberOfSlides": "19",
-        "isVideo": "no"
-		},
-		{
-        "name": "End",
-        "numberOfSlides": "1",
-        "isVideo": "no"
 		}
 	]
 }

@@ -77,20 +77,20 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/Assumptions\/index.html": {
+	"\/assumptions\/index.html": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/Assumptions\/index.html",
+		"inputAbbreviatedPath": "\/assumptions\/index.html",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/ChickenDog\/index.html": {
+	"\/chickendog\/index.html": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/ChickenDog\/index.html",
+		"inputAbbreviatedPath": "\/chickendog\/index.html",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
@@ -225,6 +225,15 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/index - Copy [6].html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/index - Copy [6].html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/index - Copy.html": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -349,14 +358,25 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/LikeCatsAndDogs\/index.html": {
+	"\/likecatsanddogs\/index.html": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/LikeCatsAndDogs\/index.html",
+		"inputAbbreviatedPath": "\/likecatsanddogs\/index.html",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
+		},
+	"\/nono - Copy.json": {
+		"fileType": 524288,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/nono - Copy.json",
+		"orderOutput": 0,
+		"outputAbbreviatedPath": "\/nono - Copy-min.json",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1
 		},
 	"\/nono.json": {
 		"fileType": 524288,
