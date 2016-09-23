@@ -13,15 +13,15 @@
 <!-- Bootstrap -->
 <link href="/css/bootstrap.css" rel="stylesheet">
 
+<!-- swiper -->
+<link rel="stylesheet" href="/css/swiper.min.css">
+
 <!-- angular -->
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-resource.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.min.js"></script>
 <script type="text/javascript" src="/app/scripts/app.js"></script>
 <script type="text/javascript" src="/app/scripts/controllers.js"></script>
-
-<!-- swiper -->
-<link rel="stylesheet" href="/css/swiper.min.css">
 
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -34,19 +34,19 @@
 <link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
 
-<body>
+<body ng-controller="nonoJsonController">
 <!-- buts -->
 <!--<div id="butAll" class="butAll">
 	<a href="mailto:sire@kingofthenono.com?subject=nonono"><div id="butLft" class="butLft"></div></a>
 	<a href="https://twitter.com/kingofthenono"><div id="butRgt" class="butRgt"></div></a>
-</div>
+</div>-->
 <div id="swUp" class="swUp"><img src="/images/swipeup.png" class="img-responsive"></div>
-<div id="swLft" class="swLft"><img src="/images/swipeleft.png" class="img-responsive"></div>-->
+<div id="swLft" class="swLft"><img src="/images/swipeleft.png" class="img-responsive"></div>
 
 <!-- swipes --> 
 
 <!-- vertical -->
-<div class="swiper-container swiper-container-v" ng-controller="nonoJsonController">
+<div class="swiper-container swiper-container-v">
 	<div class="swiper-wrapper">
 		<div class="swiper-slide">
 			<img src="images/title.gif?nono=" id="nono" class="img-responsive" alt="NoNoNoNoNoNo" />
@@ -57,7 +57,7 @@
 			<!-- start horizontal -->
 			<div class="swiper-container swiper-container-h">
 				<div class="swiper-wrapper">
-					<div class="swiper-slide" ng-repeat="n in getSlides(strip.numberOfSlides) track by $index"><img ng-src="/{{strip.name}}/{{$index + 1}}.gif" class="img-responsive" alt="" /></div>
+					<div class="swiper-slide" ng-repeat="n in getSlides(strip.numberOfSlides) track by $index"><img src="{{ strip.name }}/{{ $index + 1 }}.gif" class="img-responsive" alt="" /></div>
 				</div>
 			</div>
 			<!-- end horizontal -->
@@ -95,7 +95,6 @@ var count = 0;
 var swiperH = new Swiper('.swiper-container-h', {
 	spaceBetween: 30,
 	grabCursor: true,
-	observer: true,
 	onReachBeginning: function() {
 		//shBeg('swLft', 'show');
 	},
@@ -107,7 +106,6 @@ var swiperV = new Swiper('.swiper-container-v', {
 	direction: 'vertical',
 	spaceBetween: 30,
 	grabCursor: true,
-	observer: true,
 	onTouchStart: function() {
 		shBeg('swUp', 'hide');
 		shBeg('swLft', 'hide');

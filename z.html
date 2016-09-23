@@ -34,39 +34,23 @@
 <link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
 
-<body>
+<body ng-controller="nonoJsonController">
 <!-- buts -->
 <!--<div id="butAll" class="butAll">
 	<a href="mailto:sire@kingofthenono.com?subject=nonono"><div id="butLft" class="butLft"></div></a>
 	<a href="https://twitter.com/kingofthenono"><div id="butRgt" class="butRgt"></div></a>
-</div>
+</div>-->
 <div id="swUp" class="swUp"><img src="/images/swipeup.png" class="img-responsive"></div>
-<div id="swLft" class="swLft"><img src="/images/swipeleft.png" class="img-responsive"></div>-->
+<div id="swLft" class="swLft"><img src="/images/swipeleft.png" class="img-responsive"></div>
 
 <!-- swipes --> 
-
-<!-- vertical -->
-<div class="swiper-container swiper-container-v" ng-controller="nonoJsonController">
-	<div class="swiper-wrapper">
-		<div class="swiper-slide">
-			<img src="images/title.gif?nono=" id="nono" class="img-responsive" alt="NoNoNoNoNoNo" />
-			<audio id="auTitle" src="/media/intro_fart.mp3"></audio>
-		</div>
-		
-		<div class="swiper-slide" ng-repeat="strip in strips"> 
-			<!-- start horizontal -->
+			
+			<!-- horizontal -->
 			<div class="swiper-container swiper-container-h">
 				<div class="swiper-wrapper">
-					<div class="swiper-slide" ng-repeat="n in getSlides(strip.numberOfSlides) track by $index"><img ng-src="/{{strip.name}}/{{$index + 1}}.gif" class="img-responsive" alt="" /></div>
+					<div class="swiper-slide" ng-repeat="strip in strips"><img src="/{{strip.name}}/1.gif" class="img-responsive" alt=""></div>
 				</div>
 			</div>
-			<!-- end horizontal -->
-			
-			<!-- vertical --> 
-		</div>
-		<div class="swiper-slide noI"><img src="/images/end.gif" class="img-responsive" alt="NoNoNoNoNoNo" /></div>
-	</div>
-</div>
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
 <script src="/js/jquery-1.11.3.min.js"></script> 
@@ -82,8 +66,8 @@
 
 var nono = Math.random();
 var img = document.getElementById("nono");
-img.src="/images/title.gif?nono=" + nono;
-console.log(img.src);
+//img.src="/images/title.gif?nono=" + nono;
+//console.log(img.src);
 // global vars
 //var swiperV;
 //var swiperH;
@@ -95,7 +79,6 @@ var count = 0;
 var swiperH = new Swiper('.swiper-container-h', {
 	spaceBetween: 30,
 	grabCursor: true,
-	observer: true,
 	onReachBeginning: function() {
 		//shBeg('swLft', 'show');
 	},
@@ -107,7 +90,6 @@ var swiperV = new Swiper('.swiper-container-v', {
 	direction: 'vertical',
 	spaceBetween: 30,
 	grabCursor: true,
-	observer: true,
 	onTouchStart: function() {
 		shBeg('swUp', 'hide');
 		shBeg('swLft', 'hide');

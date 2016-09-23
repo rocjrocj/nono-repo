@@ -1,5 +1,10 @@
+<?php
+	ini_set('display_errors', 'On');
+	error_reporting(E_ALL | E_STRICT);
+?>
+
 <!DOCTYPE html>
-<html lang="en" ng-app="nono">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,13 +17,6 @@
 <title>The King of NoNo</title>
 <!-- Bootstrap -->
 <link href="/css/bootstrap.css" rel="stylesheet">
-
-<!-- angular -->
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-resource.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.min.js"></script>
-<script type="text/javascript" src="/app/scripts/app.js"></script>
-<script type="text/javascript" src="/app/scripts/controllers.js"></script>
 
 <!-- swiper -->
 <link rel="stylesheet" href="/css/swiper.min.css">
@@ -39,44 +37,54 @@
 <!--<div id="butAll" class="butAll">
 	<a href="mailto:sire@kingofthenono.com?subject=nonono"><div id="butLft" class="butLft"></div></a>
 	<a href="https://twitter.com/kingofthenono"><div id="butRgt" class="butRgt"></div></a>
-</div>
+</div>-->
 <div id="swUp" class="swUp"><img src="/images/swipeup.png" class="img-responsive"></div>
-<div id="swLft" class="swLft"><img src="/images/swipeleft.png" class="img-responsive"></div>-->
+<div id="swLft" class="swLft"><img src="/images/swipeleft.png" class="img-responsive"></div>
 
 <!-- swipes --> 
 
 <!-- vertical -->
-<div class="swiper-container swiper-container-v" ng-controller="nonoJsonController">
+<div class="swiper-container swiper-container-v">
 	<div class="swiper-wrapper">
-		<div class="swiper-slide">
-			<img src="images/title.gif?nono=" id="nono" class="img-responsive" alt="NoNoNoNoNoNo" />
+		<div class="swiper-slide"><img src="images/title.gif?nono=" id="nono" class="img-responsive" alt="NoNoNoNoNoNo" />
 			<audio id="auTitle" src="/media/intro_fart.mp3"></audio>
 		</div>
-		
-		<div class="swiper-slide" ng-repeat="strip in strips"> 
-			<!-- start horizontal -->
+		<?php
+			$jsondata = file_get_contents('nono.json');
+			$data = json_decode($jsondata, true);
+			$strips = $data['strips'];
+			foreach($strips as $strip) { 
+		?>
+		<div class="swiper-slide">
+			<!-- begin horizontal -->
 			<div class="swiper-container swiper-container-h">
 				<div class="swiper-wrapper">
-					<div class="swiper-slide" ng-repeat="n in getSlides(strip.numberOfSlides) track by $index"><img ng-src="/{{strip.name}}/{{$index + 1}}.gif" class="img-responsive" alt="" /></div>
+				<?php
+					$strip_name = $strip['name'];
+					$numberOfSlides = $strip['numberOfSlides'];
+					$i = 0;
+					while ($i <= $numberOfSlides) {
+						$i = $i + 1;
+						echo '<div class="swiper-slide"><img src="/'.$strip_name.'/'.$i.'.gif" class="img-responsive" alt="ChickenDog" /></div>';
+					}
+				?>
 				</div>
 			</div>
 			<!-- end horizontal -->
-			
-			<!-- vertical --> 
 		</div>
+		<?php 
+			} 
+		?>
 		<div class="swiper-slide noI"><img src="/images/end.gif" class="img-responsive" alt="NoNoNoNoNoNo" /></div>
 	</div>
 </div>
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
 <script src="/js/jquery-1.11.3.min.js"></script> 
-
 <!-- Include all compiled plugins (below), or include individual files as needed --> 
 <script src="/js/bootstrap.js"></script> 
-
 <!-- swiper --> 
 <script src="/js/swiper.jquery.min.js"></script> 
-
 <!-- Initialize Swiper --> 
 <script>
 
@@ -95,7 +103,6 @@ var count = 0;
 var swiperH = new Swiper('.swiper-container-h', {
 	spaceBetween: 30,
 	grabCursor: true,
-	observer: true,
 	onReachBeginning: function() {
 		//shBeg('swLft', 'show');
 	},
@@ -107,7 +114,6 @@ var swiperV = new Swiper('.swiper-container-v', {
 	direction: 'vertical',
 	spaceBetween: 30,
 	grabCursor: true,
-	observer: true,
 	onTouchStart: function() {
 		shBeg('swUp', 'hide');
 		shBeg('swLft', 'hide');

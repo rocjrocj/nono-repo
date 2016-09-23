@@ -3,7 +3,8 @@
 
 var nono = angular.module('nono', [
   'ngRoute',
-  'nonoControllers'
+  'nonoControllers',
+  'ksSwiper'
 ]);
 
 nono.config(['$routeProvider', function ($routeProvider) {
