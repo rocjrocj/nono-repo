@@ -57,114 +57,15 @@
 		<div class="swiper-slide"> <img src="images/title.gif?nono=" id="nono" class="img-responsive" alt="NoNoNoNoNoNo" />
 			<audio id="auTitle" src="/media/intro_fart.mp3"></audio>
 		</div>
-		<div class="swiper-slide"> 
+		<div class="swiper-slide" ng-repeat="x in myData"> 
 			
 			<!-- horizontal -->
 			<div class="swiper-container swiper-container-h">
 				<div class="swiper-wrapper">
-					<div class="swiper-slide" ng-repeat="x in myData"><img src="{{ x.name }}/1.gif" class="img-responsive" alt="{{ x.name + x.slides.slide }}" /></div>
+					<div class="swiper-slide" ng-repeat="s in myData"><img src="{{ x.name }}/{{ s.slides.slide }}.gif" class="img-responsive" alt="" /></div>
 				</div>
 			</div>
 			
-			
-			<li ng-repeat="x in myData">
-    {{ x.Name + ', ' + x.Country }}
-  </li>
-			
-			<!-- vertical --> 
-		</div>
-		<div class="swiper-slide"> 
-			
-			<!-- horizontal -->
-			<div class="swiper-container swiper-container-h">
-				<div class="swiper-wrapper">
-					<div class="swiper-slide"><img src="Umbrella/1.gif" class="img-responsive" alt="Umbrella" /></div>
-					<div class="swiper-slide"><img src="/Umbrella/2.gif" class="img-responsive" alt="Umbrella" /></div>
-					<div class="swiper-slide"><img src="/Umbrella/3.gif" class="img-responsive" alt="Umbrella" /></div>
-					<div class="swiper-slide"><img src="/Umbrella/4.gif" class="img-responsive" alt="Umbrella" /></div>
-					<div class="swiper-slide"><img src="/Umbrella/5.gif" class="img-responsive" alt="Umbrella" /></div>
-				</div>
-			</div>
-			<!-- start copy here --> 
-			
-			<!-- vertical --> 
-		</div>
-		<div class="swiper-slide noI"> 
-						<video src="/Assumptions/assumptions.mp4" controls></video>
-			<!-- end copy here --> 
-			
-			<!-- vertical --> 
-		</div>
-		<div class="swiper-slide"> 
-			
-			<!-- horizontal -->
-			<div class="swiper-container swiper-container-h">
-				<div class="swiper-wrapper">
-					<div class="swiper-slide"><img src="/DistantRelativity/title.gif" class="img-responsive" alt="Distant Relativity" /></div>
-					<div class="swiper-slide"><img src="DistantRelativity/1.gif" class="img-responsive" alt="Distant Relativity" /></div>
-					<div class="swiper-slide"><img src="DistantRelativity/2.gif" class="img-responsive" alt="Distant Relativity" /></div>
-					<div class="swiper-slide"><img src="DistantRelativity/3.gif" class="img-responsive" alt="Distant Relativity" /></div>
-				</div>
-			</div>
-			<!-- start copy here --> 
-			
-			<!-- vertical --> 
-		</div>
-		<div class="swiper-slide"> 
-			
-			<!-- horizontal -->
-			<div class="swiper-container swiper-container-h">
-				<div class="swiper-wrapper">
-					<div class="swiper-slide"><img src="LikeCatsAndDogs/title.gif" class="img-responsive" alt="Like Cats and Dogs" /></div>
-					<div class="swiper-slide"><img src="/LikeCatsAndDogs/1.gif" class="img-responsive" alt="Like Cats and Dogs" /></div>
-					<div class="swiper-slide"><img src="/LikeCatsAndDogs/2.gif" class="img-responsive" alt="Like Cats and Dogs" /></div>
-					<div class="swiper-slide"><img src="/LikeCatsAndDogs/3.gif" class="img-responsive" alt="Like Cats and Dogs" /></div>
-					<div class="swiper-slide"><img src="/LikeCatsAndDogs/4.gif" class="img-responsive" alt="Like Cats and Dogs" /></div>
-					<div class="swiper-slide"><img src="/LikeCatsAndDogs/5.gif" class="img-responsive" alt="Like Cats and Dogs" /></div>
-					<div class="swiper-slide"><img src="/LikeCatsAndDogs/6.gif" class="img-responsive" alt="Like Cats and Dogs" /></div>
-					<div class="swiper-slide"><img src="/LikeCatsAndDogs/7.gif" class="img-responsive" alt="Like Cats and Dogs" /></div>
-					<div class="swiper-slide"><img src="/LikeCatsAndDogs/8.gif" class="img-responsive" alt="Like Cats and Dogs" /></div>
-					<div class="swiper-slide"><img src="/LikeCatsAndDogs/9.gif" class="img-responsive" alt="Like Cats and Dogs" /></div>
-					<div class="swiper-slide"><img src="/LikeCatsAndDogs/10.gif" class="img-responsive" alt="Like Cats and Dogs" /></div>
-					<div class="swiper-slide"><img src="/LikeCatsAndDogs/11.gif" class="img-responsive" alt="Like Cats and Dogs" /></div>
-					<div class="swiper-slide"><img src="/LikeCatsAndDogs/12.gif" class="img-responsive" alt="Like Cats and Dogs" /></div>
-					<div class="swiper-slide"><img src="/LikeCatsAndDogs/13.gif" class="img-responsive" alt="Like Cats and Dogs" /></div>
-					<div class="swiper-slide"><img src="/LikeCatsAndDogs/14.gif" class="img-responsive" alt="Like Cats and Dogs" /></div>
-					<div class="swiper-slide"><img src="/LikeCatsAndDogs/15.gif" class="img-responsive" alt="Like Cats and Dogs" /></div>
-					<div class="swiper-slide"><img src="/LikeCatsAndDogs/16.gif" class="img-responsive" alt="Like Cats and Dogs" /></div>
-					<div class="swiper-slide"><img src="/LikeCatsAndDogs/17.gif" class="img-responsive" alt="Like Cats and Dogs" /></div>
-					<div class="swiper-slide"><img src="/LikeCatsAndDogs/18.gif" class="img-responsive" alt="Like Cats and Dogs" /></div>
-					<div class="swiper-slide"><img src="/LikeCatsAndDogs/19.gif" class="img-responsive" alt="Like Cats and Dogs" /></div>
-				</div>
-			</div>
-			<!-- end copy here --> 
-			
-			<!-- paste here --><!-- start copy here --> 
-			
-			<!-- vertical --> 
-		</div>
-		<div class="swiper-slide noI"> 
-						<video src="/Hotdog/hotdog.mp4" class="swiper-lazy" controls></video>
-			<!-- end copy here --> 
-			<!-- start copy here --> 
-			
-			<!-- vertical --> 
-		</div>
-		<div class="swiper-slide"> 
-			
-			<!-- horizontal -->
-			<div class="swiper-container swiper-container-h">
-				<div class="swiper-wrapper">
-					<div class="swiper-slide"><img src="Threadbare/title.gif" class="img-responsive" alt="Threadbare" /></div>
-					<div class="swiper-slide"><img src="Threadbare/1.gif" src="/Threadbare/1.gif" class="img-responsive" alt="Threadbare" /></div>
-					<div class="swiper-slide"><img src="Threadbare/2.gif" src="/Threadbare/2.gif"  class="img-responsive" alt="Threadbare" /></div>
-					<div class="swiper-slide"><img src="/Threadbare/3.gif" class="img-responsive" alt="Threadbare" /></div>
-					<div class="swiper-slide"><img src="/Threadbare/4.gif" class="img-responsive" alt="Threadbare" /></div>
-					<div class="swiper-slide"><img src="/Threadbare/5.gif" class="img-responsive" alt="Threadbare" /></div>
-					<div class="swiper-slide"><img src="/Threadbare/5b.gif" class="img-responsive" alt="Threadbare" /></div>
-				</div>
-			</div>
-			<!-- end copy here --> 
 			<!-- vertical --> 
 		</div>
 		<div class="swiper-slide noI"><img src="/images/end.gif" class="img-responsive" alt="NoNoNoNoNoNo" /></div>
