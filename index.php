@@ -1,6 +1,23 @@
 <?php
 	ini_set('display_errors', 'On');
 	error_reporting(E_ALL | E_STRICT);
+	
+	$jsondata = file_get_contents('nono.json');
+	$data = json_decode($jsondata, true);
+	//$strips = $data['strips'];
+	
+	$strip;
+	$strips;
+	
+	if (isset($_GET['strip'])) {
+		echo $_GET['strip'];
+		$strip = $_GET['strip'];
+		$strips = $data['strips'][$strip];
+	} else {
+		// Fallback behaviour goes here
+		$strip = "all";
+		$strips = $data['strips'];
+	}
 ?>
 
 <!DOCTYPE html>
@@ -14,7 +31,7 @@
 <meta http-equiv="expires" content="0" />
 <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
 <meta http-equiv="pragma" content="no-cache" />
-<title>The King of NoNo</title>
+<title>King Of The NoNo</title>
 <!-- Bootstrap -->
 <link href="/css/bootstrap.css" rel="stylesheet">
 
@@ -50,9 +67,9 @@
 			<audio id="auTitle" src="/media/intro_fart.mp3"></audio>
 		</div>
 		<?php
-			$jsondata = file_get_contents('nono.json');
-			$data = json_decode($jsondata, true);
-			$strips = $data['strips'];
+			//$jsondata = file_get_contents('nono.json');
+//			$data = json_decode($jsondata, true);
+//			$strips = $data['strips'];
 			foreach($strips as $strip) { 
 		?>
 		<div class="swiper-slide">
@@ -62,10 +79,15 @@
 				<?php
 					$strip_name = $strip['name'];
 					$numberOfSlides = $strip['numberOfSlides'];
-					$i = 0;
-					while ($i <= $numberOfSlides) {
-						$i = $i + 1;
-						echo '<div class="swiper-slide"><img src="/'.$strip_name.'/'.$i.'.gif" class="img-responsive" alt="ChickenDog" /></div>';
+					if ($strip['isVideo'] == "no") {
+						$i = 1;
+						while ($i <= $numberOfSlides) {
+							echo '<div class="swiper-slide"><img src="/'.$strip_name.'/'.$i.'.gif" class="img-responsive" alt="'.$strip_name.'" /></div>';
+							$i = $i + 1;
+						}
+					} else {
+						//echo '<div class="swiper-slide"><img src="/'.$strip_name.'/'1.mp4" class="img-responsive" alt="'.$strip_name.'" /></div>';
+						echo '<video src="/'.$strip_name.'/1.mp4" controls></video>';
 					}
 				?>
 				</div>

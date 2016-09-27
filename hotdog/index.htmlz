@@ -29,7 +29,7 @@
 
 <body>
 
-	<video src="/Hotdog/hotdog.mp4" class="swiper-lazy" controls></video>
+	<video src="/hotdog/1.mp4" class="swiper-lazy" controls></video>
 
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 

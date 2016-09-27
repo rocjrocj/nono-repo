@@ -132,7 +132,7 @@
 			<!-- vertical --> 
 		</div>
 		<div class="swiper-slide noI"> 
-						<video src="/assumptions/assumptions.mp4" class="swiper-lazy" controls></video>
+						<video src="/assumptions/1.mp4" class="swiper-lazy" controls></video>
 						<div class="swiper-lazy-preloader"></div>
 			<!-- end copy here --> 
 			
@@ -209,7 +209,7 @@
 			<!-- vertical --> 
 		</div>
 		<div class="swiper-slide noI"> 
-						<video src="/Hotdog/hotdog.mp4" class="swiper-lazy" controls></video>
+						<video src="/hotdog/1.mp4" class="swiper-lazy" controls></video>
 						<div class="swiper-lazy-preloader"></div>
 			<!-- end copy here --> 
 			<!-- start copy here --> 

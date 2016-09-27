@@ -30,16 +30,20 @@
 <body>
 
 			
-
+			<!-- horizontal -->
 			<div class="swiper-container swiper-container-h">
 				<div class="swiper-wrapper">
-					<div class="swiper-slide"><img src="/DistantRelativity/title.gif" class="img-responsive" alt="Distant Relativity" /></div>
-					<div class="swiper-slide"><img src="/DistantRelativity/1.gif" class="img-responsive" alt="Distant Relativity" /></div>
-					<div class="swiper-slide"><img src="/DistantRelativity/2.gif" class="img-responsive" alt="Distant Relativity" /></div>
-					<div class="swiper-slide"><img src="/DistantRelativity/3.gif" class="img-responsive" alt="Distant Relativity" /></div>
+					<div class="swiper-slide"><img src="/threadbare/1.gif" class="img-responsive" alt="Threadbare" /></div>
+					<div class="swiper-slide"><img src="/threadbare/2.gif" class="img-responsive swiper-lazy" alt="Threadbare" /></div>
+					<div class="swiper-slide"><img src="/threadbare/3.gif" class="img-responsive swiper-lazy" alt="Threadbare" /></div>
+					<div class="swiper-slide"><img src="/threadbare/4.gif" class="img-responsive swiper-lazy" alt="Threadbare" /></div>
+					<div class="swiper-slide"><img src="/threadbare/5.gif" class="img-responsive swiper-lazy" alt="Threadbare" /></div>
+					<div class="swiper-slide"><img src="/threadbare/6.gif" class="img-responsive swiper-lazy" alt="Threadbare" /></div>
+					<div class="swiper-slide"><img src="/threadbare/7.gif" class="img-responsive swiper-lazy" alt="Threadbare" /></div>
 				</div>
 			</div>
-
+			
+			
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
 <script src="/js/jquery-1.11.3.min.js"></script> 
 
@@ -51,6 +55,7 @@
 
 <!-- Initialize Swiper --> 
 <script>
+
 
 // initialize swiper
 var swiperH = new Swiper('.swiper-container-h', {

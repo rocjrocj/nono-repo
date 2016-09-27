@@ -29,7 +29,7 @@
 
 <body>
 
-	<video src="/assumptions/assumptions.mp4" controls></video>
+	<video src="/assumptions/1.mp4" controls></video>
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
 <script src="/js/jquery-1.11.3.min.js"></script> 
