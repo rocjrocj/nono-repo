@@ -6,18 +6,8 @@
 	$data = json_decode($jsondata, true);
 	//$strips = $data['strips'];
 	
-	$strip;
-	$strips;
-	
-	if (isset($_GET['strip'])) {
-		echo $_GET['strip'];
-		$strip = $_GET['strip'];
-		$strips = $data['strips'][$strip];
-	} else {
-		// Fallback behaviour goes here
-		$strip = "all";
-		$strips = $data['strips'];
-	}
+	//$strip;
+	//$strips;
 ?>
 
 <!DOCTYPE html>
@@ -69,25 +59,57 @@
 		<?php
 			//$jsondata = file_get_contents('nono.json');
 //			$data = json_decode($jsondata, true);
-//			$strips = $data['strips'];
-			foreach($strips as $strip) { 
+			$strips = $data['strips'];
+
+
+	
+	if (isset($_GET['strip'])) {
+		$urlStrip = $_GET['strip'];
+		echo $urlStrip;
+		//$key = array_search($urlStrip, $strips);
+		//if ($key) {
+			$i = 0;
+			$iStrip = $i;
+			foreach($strips as $strip) {
+				//echo $index;
+				if ($strip['name'] == $urlStrip) {
+					$iStrip = $i;
+					echo 'iStrip: '.$iStrip;
+				}
+				$i++;
+			}
+			//$strips = $strips[5];
+			if ($iStrip != "") {
+				$strips = array_slice($strips, $iStrip, 1);
+			}
+		//}
+	}
+	
+	//if ($iStrip) {
+//		$nStrips = $data['strips'][5];
+//	} else {
+//		$nStrips = $data['strips'];
+//	}
+//	
+			//$i = 0;
+			foreach($strips as $strip) {
 		?>
 		<div class="swiper-slide">
 			<!-- begin horizontal -->
 			<div class="swiper-container swiper-container-h">
 				<div class="swiper-wrapper">
 				<?php
-					$strip_name = $strip['name'];
+					$stripName = $strip['name'];
 					$numberOfSlides = $strip['numberOfSlides'];
 					if ($strip['isVideo'] == "no") {
 						$i = 1;
 						while ($i <= $numberOfSlides) {
-							echo '<div class="swiper-slide"><img src="/'.$strip_name.'/'.$i.'.gif" class="img-responsive" alt="'.$strip_name.'" /></div>';
-							$i = $i + 1;
+							echo '<div class="swiper-slide"><img src="/'.$stripName.'/'.$i.'.gif" class="img-responsive" alt="'.$stripName.'" /></div>';
+							$i++;
 						}
 					} else {
 						//echo '<div class="swiper-slide"><img src="/'.$strip_name.'/'1.mp4" class="img-responsive" alt="'.$strip_name.'" /></div>';
-						echo '<video src="/'.$strip_name.'/1.mp4" controls></video>';
+						echo '<video src="/'.$stripName.'/1.mp4" controls></video>';
 					}
 				?>
 				</div>

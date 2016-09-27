@@ -16,6 +16,7 @@ html, body {
 }
 body {
  	background-color: $color-bakd;
+	color: $color-white;
 }
 .swiper-container {
 	width: 100%;
@@ -58,13 +59,11 @@ body {
     float: left;
     width: 50%;
     height: 100%;
-    // background-color: red;
 }
 .butRgt {
     float: right;
     width: 50%;
     height: 100%;
-    // background-color: green;
 }
 
 .swUp {
