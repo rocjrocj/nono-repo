@@ -70,6 +70,13 @@ body {
   z-index: 400;
   display: none; }
 
+.stalker {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 400;
+  display: none; }
+
 /* Large desktop */
 @media (min-width: 1200px) {
   .swUp img {

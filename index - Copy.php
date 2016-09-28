@@ -1,3 +1,15 @@
+<?php
+	ini_set('display_errors', 'On');
+	error_reporting(E_ALL | E_STRICT);
+	
+	$jsondata = file_get_contents('nono.json');
+	$data = json_decode($jsondata, true);
+	//$strips = $data['strips'];
+	
+	//$strip;
+	//$strips;
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,9 +41,12 @@
 
 <body>
 <!-- buts -->
+<!--<div id="butAll" class="butAll">
+	<a href="mailto:sire@kingofthenono.com?subject=nonono"><div id="butLft" class="butLft"></div></a>
+	<a href="https://twitter.com/kingofthenono"><div id="butRgt" class="butRgt"></div></a>
+</div>-->
 <div id="swUp" class="swUp"><img src="/images/swipeup.png" class="img-responsive"></div>
 <div id="swLft" class="swLft"><img src="/images/swipeleft.png" class="img-responsive"></div>
-<div id="stalker" class="stalker"><img src="/images/stalker.gif" class="img-responsive"></div>
 
 <!-- swipes --> 
 
@@ -42,27 +57,41 @@
 			<audio id="auTitle" src="/media/intro_fart.mp3"></audio>
 		</div>
 		<?php
-			$jsondata = file_get_contents('nono.json');
-			$data = json_decode($jsondata, true);
+			//$jsondata = file_get_contents('nono.json');
+//			$data = json_decode($jsondata, true);
 			$strips = $data['strips'];
-			if (isset($_GET['strip'])) {
-				$urlStrip = $_GET['strip'];
-				//echo $urlStrip;
-				$i = 0;
-				$iStrip = $i;
-				foreach($strips as $strip) {
-					//echo $index;
-					if ($strip['name'] == $urlStrip) {
-						$iStrip = $i;
-						//echo 'iStrip: '.$iStrip;
-					}
-					$i++;
+
+
+	
+	if (isset($_GET['strip'])) {
+		$urlStrip = $_GET['strip'];
+		echo $urlStrip;
+		//$key = array_search($urlStrip, $strips);
+		//if ($key) {
+			$i = 0;
+			$iStrip = $i;
+			foreach($strips as $strip) {
+				//echo $index;
+				if ($strip['name'] == $urlStrip) {
+					$iStrip = $i;
+					echo 'iStrip: '.$iStrip;
 				}
-				if ($iStrip != "") {
-					$strips = array_slice($strips, $iStrip, 1);
-				}
+				$i++;
 			}
-			$count = count($strips);
+			//$strips = $strips[5];
+			if ($iStrip != "") {
+				$strips = array_slice($strips, $iStrip, 1);
+			}
+		//}
+	}
+	
+	//if ($iStrip) {
+//		$nStrips = $data['strips'][5];
+//	} else {
+//		$nStrips = $data['strips'];
+//	}
+//	
+			//$i = 0;
 			foreach($strips as $strip) {
 		?>
 		<div class="swiper-slide">
@@ -79,6 +108,7 @@
 							$i++;
 						}
 					} else {
+						//echo '<div class="swiper-slide"><img src="/'.$strip_name.'/'1.mp4" class="img-responsive" alt="'.$strip_name.'" /></div>';
 						echo '<video src="/'.$stripName.'/1.mp4" controls></video>';
 					}
 				?>
@@ -105,7 +135,7 @@
 var nono = Math.random();
 var img = document.getElementById("nono");
 img.src="/images/title.gif?nono=" + nono;
-//console.log(img.src);
+console.log(img.src);
 // global vars
 //var swiperV;
 //var swiperH;
@@ -121,7 +151,7 @@ var swiperH = new Swiper('.swiper-container-h', {
 		//shBeg('swLft', 'show');
 	},
 	onReachEnd: function() {
-		//shBeg('swUp', 'show');
+		shBeg('swUp', 'show');
 	}
 });
 var swiperV = new Swiper('.swiper-container-v', {
@@ -131,18 +161,17 @@ var swiperV = new Swiper('.swiper-container-v', {
 	onTouchStart: function() {
 		shBeg('swUp', 'hide');
 		shBeg('swLft', 'hide');
-		shBeg('stalker', 'hide');
-		//shBeg('butAll', 'hide');
+		shBeg('butAll', 'hide');
 	},
 	onReachBeginning: function() {
 		//shBeg('swUp', 'show');
 	},
 	onSlideChangeEnd: function() {
-		///*count = count + 1;
-//		console.log(count);
-//		if (count != 3 && count != 6 && count != 8) {
-//			//shBeg('swLft', 'show');
-//		}*/
+		count = count + 1;
+		console.log(count);
+		if (count != 3 && count != 6 && count != 8) {
+			shBeg('swLft', 'show');
+		}
 	}
 });
 	
@@ -170,12 +199,11 @@ function pAu() {
 var myInit;
 $(function () {
 	console.log("init Called");
-	//shBeg('butAll', 'show');
-	//console.log("after shBeg butAll");
+	shBeg('butAll', 'show');
+	console.log("after shBeg butAll");
 	myInit = function() {
 	   pAu();
 	   shBeg('swUp', 'show');
-	   shBeg('stalker', 'show');
 	   console.log("after shBeg swUp");
 	};
 	setTimeout(myInit, 3300);
