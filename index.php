@@ -61,6 +61,8 @@
 			}
 			//$strips = array_slice($strips, $iStrip, 1);
 			//$count = count($strips);
+			//$initialStr
+			$ii = 1;
 			foreach($strips as $strip) {
 		?>
 		<div class="swiper-slide">
@@ -83,7 +85,7 @@
 							$i++;
 						}
 					} else {
-						echo '<video src="/'.$stripName.'/1.mp4" class="vid" controls></video>';
+						echo '<div class="swiper-slide"><video src="/'.$stripName.'/1.mp4" id="vid'.$ii.'" class="vid" controls></video></div>';
 					}
 				?>
 				</div>
@@ -91,6 +93,7 @@
 			<!-- end horizontal -->
 		</div>
 		<?php 
+				$ii++;
 			} 
 		?>
 		<div id="end" class="swiper-slide noI"><img src="/images/end.gif" class="img-responsive" alt="NoNoNoNoNoNo" /></div>
@@ -109,7 +112,7 @@
 var nono = Math.random();
 var img = document.getElementById("title");
 img.src="/images/title.gif?nono=" + nono;
-//console.log(img.src);
+////console.log(img.src);
 // global vars
 //var swiperV;
 //var swiperH;
@@ -122,7 +125,7 @@ var count = 0;
 //show-hide
 //var aI = swiperV.activeIndex;
 function shBeg(shDivB, shDoB) {
-	console.log("shDivB-" + shDivB + "-" + "shDoB-" + shDoB);
+	//console.log("shDivB-" + shDivB + "-" + "shDoB-" + shDoB);
 	//if (aI != 0 && shDivB != 'swLft') {
 		if (shDoB == 'show') {
 			$('#' + shDivB).fadeIn('slow');
@@ -134,21 +137,21 @@ function shBeg(shDivB, shDoB) {
 //setTimeout(shBeg, 5000);
 //play audio
 function pAu() {
-	console.log("pAu Called");
+	//console.log("pAu Called");
 	au = document.getElementById("auTitle");
 	au.play();
 }
 //init;
 var myInit;
 $(function () {
-	console.log("init Called");
+	//console.log("init Called");
 	//shBeg('butAll', 'show');
-	//console.log("after shBeg butAll");
+	////console.log("after shBeg butAll");
 	myInit = function() {
 	   pAu();
 	   //shBeg('swUp', 'show');
 	   //shBeg('stalker', 'show');
-	   console.log("after shBeg swUp");
+	   //console.log("after shBeg swUp");
 		// initialize swiper
 		var swiperH = new Swiper('.swiper-container-h', {
 			spaceBetween: 30,
@@ -157,20 +160,34 @@ $(function () {
 			lazyLoading: true,
 			onReachBeginning: function() {
 				//shBeg('swUp', 'show');
-				//shBeg('swLft', 'show');
-				//shBeg('stalker', 'show');
+				//var sh = swiperH.slides;
+				////console.log("sh h: " + sh);
+				//var ai = this.activeIndex;
+				//console.log("ai HHHHHHHHHHHHH: " + ai);
+				//var l = this.slides;
+				//console.log("var l: " + l);
+				//if (ai != 0) {
+					//shBeg('swLft', 'show');
+					//shBeg('stalker', 'show');
+				//}
 			},
 			onReachEnd: function() {
 				shBeg('swUp', 'show');
 			},
+			onSliderMove: function() {
+				//shBeg('swUp', 'hide');
+				shBeg('swLft', 'hide');
+				//shBeg('stalker', 'hide');
+				//shBeg('butAll', 'hide');
+			},
 			// onLazyImageLoad(swiper, slide, image)
 			onLazyImageLoad: function() {
 				//shBeg('swUp', 'show');
-	   			console.log("onLazyImageLoad h");
+	   			//console.log("onLazyImageLoad h");
 			},
 			onLazyImageReady: function() {
 				//shBeg('swUp', 'show');
-	   			console.log("onLazyImageReady h");
+	   			//console.log("onLazyImageReady h");
 			}
 		});
 		var swiperV = new Swiper('.swiper-container-v', {
@@ -194,24 +211,56 @@ $(function () {
 			},
 			onReachEnd: function() {
 				shBeg('stalker', 'show');
+				//shBeg('swLft', 'hide');
 			},
 			onSlideChangeEnd: function() {
+				//$("#div1").find("img").length
+				var ai = swiperV.activeIndex;
+				//console.log("swiperV.activeIndex for vids:" + ai);
+				var s = swiperV.slides[ai];
+				//console.log("swiperV s for vids:" + s);
+				if ($(s).find("video").length) {
+					//console.log("HAS VIDEO");
+					$("#vid" + ai)[0].play();
+					//var play = 1;
+					//console.log("#vid" + ai);
+				} else {
+					//$("#vid" + ai).pause();
+					$('.vid').each(function() {
+						$(this).get(0).pause();
+					});
+					//aiH = swiperH.activeIndex;
+					//console.log("aiH: " + aiH);
+					if (ai != 0 && !swiperV.isEnd) {
+						shBeg('swLft', 'show');
+					}
+				}
+			},
+			//onSlideChangeEnd: function() {
 				///*count = count + 1;
-		//		console.log(count);
+		//		//console.log(count);
 		//		if (count != 3 && count != 6 && count != 8) {
 		//			//shBeg('swLft', 'show');
 		//		}*/
-			},
+			//},
 			// onLazyImageLoad(swiper, slide, image)
 			onLazyImageLoad: function() {
 				//shBeg('swUp', 'show');
-	   			console.log("onLazyImageLoad v: " + swiperV.activeIndex);
+	   			//console.log("onLazyImageLoad v: " + swiperV.activeIndex);
 			},
 			onLazyImageReady: function() {
 				//shBeg('swUp', 'show');
-	   			console.log("onLazyImageReady v: " + swiperV.activeIndex);
+	   			//console.log("onLazyImageReady v: " + swiperV.activeIndex);
 			}
 		});
+		
+		
+		/*swiperH.on('slideChangeStart', function () {
+			//console.log('slide change start');
+		});*/
+		
+		
+		
 	};
 	setTimeout(myInit, 3300);
 });

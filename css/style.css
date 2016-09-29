@@ -80,8 +80,20 @@ body {
   text-align: right;
   display: none; }
 
+.swUp img {
+  height: 100%;
+  width: 100%; }
+
+.swLft img {
+  height: 100%;
+  width: 100%; }
+
+.stalker img {
+  height: 100%;
+  width: 100%; }
+
 /* Large desktop */
-@media (min-width: 1200px) {
+@media (min-width: 980px) and (max-width: 1400px) {
   .swUp {
     bottom: 20px;
     right: 20px; }
@@ -94,17 +106,17 @@ body {
     top: 20px;
     right: 20px; }
 
-  .swUp {
-    height: 100%;
-    width: 100%; }
+  .swUp img {
+    height: 75%;
+    width: 75%; }
 
   .swLft img {
-    height: 100%;
-    width: 100%; }
+    height: 75%;
+    width: 75%; }
 
   .stalker img {
-    height: 100%;
-    width: 100%; } }
+    height: 75%;
+    width: 75%; } }
 /* Portrait tablet to landscape and desktop */
 @media (min-width: 768px) and (max-width: 979px) {
   .swUp {
