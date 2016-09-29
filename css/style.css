@@ -61,6 +61,7 @@ body {
   bottom: 20px;
   right: 20px;
   z-index: 400;
+  text-align: right;
   display: none; }
 
 .swLft {
@@ -68,6 +69,7 @@ body {
   bottom: 20px;
   right: 20px;
   z-index: 400;
+  text-align: right;
   display: none; }
 
 .stalker {
@@ -75,50 +77,109 @@ body {
   top: 20px;
   right: 20px;
   z-index: 400;
+  text-align: right;
   display: none; }
 
 /* Large desktop */
 @media (min-width: 1200px) {
-  .swUp img {
+  .swUp {
+    bottom: 20px;
+    right: 20px; }
+
+  .swLft {
+    bottom: 20px;
+    right: 20px; }
+
+  .stalker {
+    top: 20px;
+    right: 20px; }
+
+  .swUp {
     height: 100%;
     width: 100%; }
 
   .swLft img {
     height: 100%;
+    width: 100%; }
+
+  .stalker img {
+    height: 100%;
     width: 100%; } }
 /* Portrait tablet to landscape and desktop */
 @media (min-width: 768px) and (max-width: 979px) {
+  .swUp {
+    bottom: 20px;
+    right: 20px; }
+
+  .swLft {
+    bottom: 20px;
+    right: 20px; }
+
+  .stalker {
+    top: 20px;
+    right: 20px; }
+
   .swUp img {
     height: 50%;
-    width: 50%;
-    left: 20px; }
+    width: 50%; }
 
   .swLft img {
     height: 50%;
-    width: 50%;
-    left: 20px; } }
+    width: 50%; }
+
+  .stalker img {
+    height: 50%;
+    width: 50%; } }
 /* Landscape phone to portrait tablet */
 @media (max-width: 767px) {
+  .swUp {
+    bottom: 10px;
+    right: 10px; }
+
+  .swLft {
+    bottom: 10px;
+    right: 10px; }
+
+  .stalker {
+    top: 10px;
+    right: 10px; }
+
   .swUp img {
     height: 30%;
-    width: 30%;
-    left: 20px; }
+    width: 30%; }
 
   .swLft img {
     height: 30%;
-    width: 30%;
-    left: 20px; } }
+    width: 30%; }
+
+  .stalker img {
+    height: 30%;
+    width: 30%; } }
 /* Landscape phones and down */
 @media (max-width: 480px) {
+  .swUp {
+    bottom: 10px;
+    right: 10px; }
+
+  .swLft {
+    bottom: 10px;
+    right: 10px; }
+
+  .stalker {
+    top: 10px;
+    right: 10px; }
+
   .swUp img {
     height: 20%;
-    width: 20%;
-    left: 20px; }
+    width: 20%; }
 
   .swLft img {
     height: 20%;
-    width: 20%;
-    left: 20px; } }
+    width: 20%; }
+
+  .stalker img {
+    height: 20%;
+    width: 20%; } }
 /* helper styles */
 .divFull {
   position: relative;
@@ -129,3 +190,7 @@ body {
   position: relative;
   width: 100%;
   height: auto; }
+
+.vid {
+  height: auto;
+  width: 100%; }

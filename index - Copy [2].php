@@ -24,9 +24,9 @@
 
 <body>
 <!-- buts -->
-<div id="swUp" class="swUp"><img src="/images/swipeup.png"></div>
-<div id="swLft" class="swLft"><img src="/images/swipeleft.png"></div>
-<div id="stalker" class="stalker"><a href="http://www.twitter.com" target="_blank"><img src="/images/stalker.gif"></a></div>
+<div id="swUp" class="swUp"><img src="/images/swipeup.png" class="img-responsive"></div>
+<div id="swLft" class="swLft"><img src="/images/swipeleft.png" class="img-responsive"></div>
+<div id="stalker" class="stalker"><img src="/images/stalker.gif" class="img-responsive"></div>
 
 <!-- swipes --> 
 
@@ -56,11 +56,8 @@
 				if ($iStrip != "") {
 					$strips = array_slice($strips, $iStrip, 1);
 				}
-			} else {
-				//$iStrip = 0;
 			}
-			//$strips = array_slice($strips, $iStrip, 1);
-			//$count = count($strips);
+			$count = count($strips);
 			foreach($strips as $strip) {
 		?>
 		<div class="swiper-slide">
@@ -70,20 +67,14 @@
 				<?php
 					$stripName = $strip['name'];
 					$numberOfSlides = $strip['numberOfSlides'];
-					//if ($numberOfSlides >= 5) {
-//						$get5Slides = 5;
-//						//$get5Slides = $numberOfSlides;
-//					} else {
-//						$get5Slides = $numberOfSlides;
-//					}
 					if ($strip['isVideo'] == "no") {
 						$i = 1;
 						while ($i <= $numberOfSlides) {
-							echo '<div class="swiper-slide"><img data-src="/'.$stripName.'/'.$i.'.gif" class="img-responsive swiper-lazy" alt="'.$stripName.'" /></div><div class="swiper-lazy-preloader"></div>';
+							echo '<div class="swiper-slide"><img src="/'.$stripName.'/'.$i.'.gif" class="img-responsive" alt="'.$stripName.'" /></div>';
 							$i++;
 						}
 					} else {
-						echo '<video src="/'.$stripName.'/1.mp4" class="vid" controls></video>';
+						echo '<video src="/'.$stripName.'/1.mp4" controls></video>';
 					}
 				?>
 				</div>
@@ -93,7 +84,7 @@
 		<?php 
 			} 
 		?>
-		<div id="end" class="swiper-slide noI"><img src="/images/end.gif" class="img-responsive" alt="NoNoNoNoNoNo" /></div>
+		<div class="swiper-slide noI"><img src="/images/end.gif" class="img-responsive" alt="NoNoNoNoNoNo" /></div>
 	</div>
 </div>
 
@@ -102,12 +93,12 @@
 <!-- Include all compiled plugins (below), or include individual files as needed --> 
 <script src="/js/bootstrap.js"></script> 
 <!-- swiper --> 
-<script src="/js/swiper.min.js"></script> 
+<script src="/js/swiper.jquery.min.js"></script> 
 <!-- Initialize Swiper --> 
 <script>
 
 var nono = Math.random();
-var img = document.getElementById("title");
+var img = document.getElementById("nono");
 img.src="/images/title.gif?nono=" + nono;
 //console.log(img.src);
 // global vars
@@ -117,6 +108,38 @@ var swiperPage;
 var au;
 var count = 0;
 
+// initialize swiper
+var swiperH = new Swiper('.swiper-container-h', {
+	spaceBetween: 30,
+	grabCursor: true,
+	onReachBeginning: function() {
+		//shBeg('swLft', 'show');
+	},
+	onReachEnd: function() {
+		//shBeg('swUp', 'show');
+	}
+});
+var swiperV = new Swiper('.swiper-container-v', {
+	direction: 'vertical',
+	spaceBetween: 30,
+	grabCursor: true,
+	onTouchStart: function() {
+		shBeg('swUp', 'hide');
+		shBeg('swLft', 'hide');
+		shBeg('stalker', 'hide');
+		//shBeg('butAll', 'hide');
+	},
+	onReachBeginning: function() {
+		//shBeg('swUp', 'show');
+	},
+	onSlideChangeEnd: function() {
+		///*count = count + 1;
+//		console.log(count);
+//		if (count != 3 && count != 6 && count != 8) {
+//			//shBeg('swLft', 'show');
+//		}*/
+	}
+});
 	
 /********** functions **********/
 //show-hide
@@ -146,72 +169,9 @@ $(function () {
 	//console.log("after shBeg butAll");
 	myInit = function() {
 	   pAu();
-	   //shBeg('swUp', 'show');
-	   //shBeg('stalker', 'show');
+	   shBeg('swUp', 'show');
+	   shBeg('stalker', 'show');
 	   console.log("after shBeg swUp");
-		// initialize swiper
-		var swiperH = new Swiper('.swiper-container-h', {
-			spaceBetween: 30,
-			grabCursor: true,
-			preloadImages: false,
-			lazyLoading: true,
-			onReachBeginning: function() {
-				//shBeg('swUp', 'show');
-				//shBeg('swLft', 'show');
-				//shBeg('stalker', 'show');
-			},
-			onReachEnd: function() {
-				shBeg('swUp', 'show');
-			},
-			// onLazyImageLoad(swiper, slide, image)
-			onLazyImageLoad: function() {
-				//shBeg('swUp', 'show');
-	   			console.log("onLazyImageLoad h");
-			},
-			onLazyImageReady: function() {
-				//shBeg('swUp', 'show');
-	   			console.log("onLazyImageReady h");
-			}
-		});
-		var swiperV = new Swiper('.swiper-container-v', {
-			direction: 'vertical',
-			spaceBetween: 30,
-			grabCursor: true,
-			preloadImages: false,
-			lazyLoading: true,
-			//lazyLoadingInPrevNext: true,
-			onSliderMove: function() {
-				shBeg('swUp', 'hide');
-				shBeg('swLft', 'hide');
-				shBeg('stalker', 'hide');
-				//shBeg('butAll', 'hide');
-			},
-			onReachBeginning: function() {
-				//shBeg('swUp', 'show');
-				shBeg('swUp', 'show');
-				shBeg('stalker', 'show');
-				//shBeg('swLft', 'show');
-			},
-			onReachEnd: function() {
-				shBeg('stalker', 'show');
-			},
-			onSlideChangeEnd: function() {
-				///*count = count + 1;
-		//		console.log(count);
-		//		if (count != 3 && count != 6 && count != 8) {
-		//			//shBeg('swLft', 'show');
-		//		}*/
-			},
-			// onLazyImageLoad(swiper, slide, image)
-			onLazyImageLoad: function() {
-				//shBeg('swUp', 'show');
-	   			console.log("onLazyImageLoad v: " + swiperV.activeIndex);
-			},
-			onLazyImageReady: function() {
-				//shBeg('swUp', 'show');
-	   			console.log("onLazyImageReady v: " + swiperV.activeIndex);
-			}
-		});
 	};
 	setTimeout(myInit, 3300);
 });
