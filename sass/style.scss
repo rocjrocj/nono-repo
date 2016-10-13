@@ -1,0 +1,276 @@
+
+/* Scss Document */
+
+/**** vars ****/
+$color-bakl: #f8f8f8;
+$color-bakd: #2b2b2b;
+$color-white: #fff;
+$color-black: #000;
+/**** mixins ****/
+
+
+/**** styles ****/
+html, body {
+	position: relative;
+	height: 100%;
+}
+body {
+ 	background-color: $color-bakd;
+	color: $color-white;
+}
+.swiper-container {
+	width: 100%;
+	height: 100%;
+ 	background-color: $color-bakd;
+}
+.swiper-slide {
+	text-align: center;
+	font-size: 18px;
+	background-color: $color-bakl;
+	/* Center slide text vertically */
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	-webkit-justify-content: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	-webkit-align-items: center;
+	align-items: center;
+}
+.swiper-slide img {
+	width: 100%;
+	height: auto;
+}
+
+.butAll {
+    position: absolute;
+	top: 0;
+    width: 100%;
+    height: 40%;
+    z-index: 300;
+    cursor: pointer;
+    display: none;
+}
+.butLft {
+    float: left;
+    width: 50%;
+    height: 100%;
+}
+.butRgt {
+    float: right;
+    width: 50%;
+    height: 100%;
+}
+
+.swUp {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    z-index: 400;
+	text-align: right;
+    display: none;
+}
+.swLft {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    z-index: 400;
+	text-align: right;
+    display: none;
+}
+.stalker {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 400;
+	text-align: right;
+    display: none;
+}   
+.glutton {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    z-index: 400;
+	text-align: right;
+    display: none;
+}
+.swUp img {
+	height: 100%;
+	width: 100%;
+}
+.swLft img {
+	height: 100%;
+	width: 100%;
+}
+.stalker img {
+	height: 100%;
+	width: 100%;
+} 
+.glutton img {
+	height: 100%;
+	width: 100%;
+} 
+
+/* Large desktop */
+@media (min-width: 980px) and (max-width: 1400px) {
+	.swUp {
+		bottom: 20px;
+		right: 20px;
+	}
+	.swLft {
+		bottom: 20px;
+		right: 20px;
+	}
+	.stalker {
+		top: 20px;
+		right: 20px;
+	}
+	.glutton {
+		bottom: 20px;
+		right: 20px;
+	}
+	.swUp img {
+		height: 75%;
+		width: 75%;
+	}
+	.swLft img {
+		height: 75%;
+		width: 75%;
+	}
+	.stalker img {
+		height: 75%;
+		width: 75%;
+	}
+	.glutton img {
+		height: 75%;
+		width: 75%;
+	}
+}
+     
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) {
+	.swUp {
+		bottom: 20px;
+		right: 20px;
+	}
+	.swLft {
+		bottom: 20px;
+		right: 20px;
+	}
+	.stalker {
+		top: 20px;
+		right: 20px;
+	}
+	.glutton {
+		bottom: 20px;
+		right: 20px;
+	}
+	.swUp img {
+		height: 50%;
+		width: 50%;
+	}
+	.swLft img {
+		height: 50%;
+		width: 50%;
+	}
+	.stalker img {
+		height: 50%;
+		width: 50%;
+	}
+	.glutton img {
+		height: 50%;
+		width: 50%;
+	}
+}
+     
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+	.swUp {
+		bottom: 10px;
+		right: 10px;
+	}
+	.swLft {
+		bottom: 10px;
+		right: 10px;
+	}
+	.stalker {
+		top: 10px;
+		right: 10px;
+	}
+	.glutton {
+		bottom: 10px;
+		right: 10px;
+	}
+	.swUp img {
+		height: 30%;
+		width: 30%;
+	}
+	.swLft img {
+		height: 30%;
+		width: 30%;
+	}
+	.stalker img {
+		height: 30%;
+		width: 30%;
+	}
+	.glutton img {
+		height: 30%;
+		width: 30%;
+	}
+ }
+     
+/* Landscape phones and down */
+@media (max-width: 480px) { 
+	.swUp {
+		bottom: 10px;
+		right: 10px;
+	}
+	.swLft {
+		bottom: 10px;
+		right: 10px;
+	}
+	.stalker {
+		bottom: 10px;
+		right: 10px;
+	}
+	.glutton {
+		top: 10px;
+		right: 10px;
+	}
+	.swUp img {
+		height: 20%;
+		width: 20%;
+	}
+	.swLft img {
+		height: 20%;
+		width: 20%;
+	}
+	.stalker img {
+		height: 20%;
+		width: 20%;
+	}
+	.glutton img {
+		height: 20%;
+		width: 20%;
+	}
+}
+
+/* helper styles */
+.divFull {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+.imgFull {
+	position: relative;
+	width: 100%;
+	height: auto;
+}
+.vid {
+	height: auto;
+	width: 100%;
+}

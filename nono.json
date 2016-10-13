@@ -1,0 +1,24 @@
+{
+    "strips": [
+		{
+			"name": "chickendog",
+			"numberOfSlides": "19",
+			"isVideo": "no"
+		},
+		{
+			"name": "assumptions",
+			"numberOfSlides": "1",
+			"isVideo": "yes"
+		},
+		{
+			"name": "likecatsanddogs",
+			"numberOfSlides": "19",
+			"isVideo": "no"
+		},
+		{
+			"name": "hotdog",
+			"numberOfSlides": "1",
+			"isVideo": "yes"
+		}
+	]
+}
