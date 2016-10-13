@@ -6,19 +6,9 @@
 			"isVideo": "no"
 		},
 		{
-			"name": "umbrella",
-			"numberOfSlides": "5",
-			"isVideo": "no"
-		},
-		{
 			"name": "assumptions",
 			"numberOfSlides": "1",
 			"isVideo": "yes"
-		},
-		{
-			"name": "distantrelativity",
-			"numberOfSlides": "4",
-			"isVideo": "no"
 		},
 		{
 			"name": "likecatsanddogs",
@@ -29,11 +19,6 @@
 			"name": "hotdog",
 			"numberOfSlides": "1",
 			"isVideo": "yes"
-		},
-		{
-			"name": "threadbare",
-			"numberOfSlides": "6",
-			"isVideo": "no"
 		}
 	]
 }
