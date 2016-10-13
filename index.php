@@ -54,9 +54,9 @@
 					}
 					$i++;
 				}
-				if ($iStrip != "") {
+				//if ($iStrip != "") {
 					$strips = array_slice($strips, $iStrip, 1);
-				}
+				//}
 			} else {
 				//$iStrip = 0;
 			}
