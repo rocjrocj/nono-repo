@@ -26,7 +26,8 @@
 <!-- buts -->
 <div id="swUp" class="swUp"><img src="/images/swipeup.png"></div>
 <div id="swLft" class="swLft"><img src="/images/swipeleft.png"></div>
-<div id="stalker" class="stalker"><a href="http://www.twitter.com" target="_blank"><img src="/images/stalker.gif"></a></div>
+<div id="stalker" class="stalker"><a href="#" class="go" target="_blank"><img src="/images/stalker.gif"></a></div>
+<div id="glutton" class="glutton"><a href="http://www.kingnono.com"><img src="/images/glutton.gif"></a></div>
 
 <!-- swipes --> 
 
@@ -201,6 +202,11 @@ $(function () {
 				shBeg('swUp', 'hide');
 				shBeg('swLft', 'hide');
 				shBeg('stalker', 'hide');
+				<?php 
+					if (isset($_GET['strip'])) {
+						echo 'shBeg(\'glutton\', \'hide\')';
+					}
+				?>
 				//shBeg('butAll', 'hide');
 			},
 			onReachBeginning: function() {
@@ -211,6 +217,11 @@ $(function () {
 			},
 			onReachEnd: function() {
 				shBeg('stalker', 'show');
+				<?php
+					if (isset($_GET['strip'])) {
+						echo 'shBeg(\'glutton\', \'show\')';
+					}
+				?>
 				//shBeg('swLft', 'hide');
 			},
 			onSlideChangeEnd: function() {
@@ -263,6 +274,13 @@ $(function () {
 		
 	};
 	setTimeout(myInit, 3300);
+	
+	$('a.go').click(function(e) {
+		e.preventDefault();
+		window.open('http://twitter.com/kingofthenono');
+		window.open('http://facebook.com');
+		window.open('http://instagram.com');
+	});
 });
 </script>
 </body>
